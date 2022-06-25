@@ -3,6 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 
+interface Props {
+  name: string
+}
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { name } = context.params;
   return {
@@ -12,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Name: NextPage = (props: GetServerSideProps) => {
+const Name: NextPage<{ props: Props[] }> = ({ name }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +26,7 @@ const Name: NextPage = (props: GetServerSideProps) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Hello {props.name}</h1>
+        <h1 className={styles.title}>Hello {name}</h1>
       </main>
 
       <footer className={styles.footer}>
