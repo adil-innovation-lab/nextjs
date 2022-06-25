@@ -7,20 +7,13 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Step 02 - Contact</title>
-        <meta name="description" content="Contact Page" />
+        <title>Step 03 - Home</title>
+        <meta name="description" content="Index Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>This is the Contact Page</h1>
-
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h2>Adil Altaf &rarr;</h2>
-            <li>email: khanadilaltaf@gmail.com</li>
-          </div>
-        </div>
+        <h1 className={styles.title}>This is the Home Page</h1>
       </main>
 
       <footer className={styles.footer}>

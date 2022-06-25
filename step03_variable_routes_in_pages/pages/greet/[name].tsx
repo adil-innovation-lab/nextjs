@@ -1,26 +1,28 @@
-import type { NextPage } from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 
-const Home: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { name } = context.params;
+  return {
+    props: {
+      name,
+    },
+  };
+};
+
+const Name: NextPage = (props: GetServerSideProps) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Step 02 - Contact</title>
-        <meta name="description" content="Contact Page" />
+        <title>Step 03 - Name</title>
+        <meta name="description" content="Name Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>This is the Contact Page</h1>
-
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h2>Adil Altaf &rarr;</h2>
-            <li>email: khanadilaltaf@gmail.com</li>
-          </div>
-        </div>
+        <h1 className={styles.title}>Hello {props.name}</h1>
       </main>
 
       <footer className={styles.footer}>
@@ -39,4 +41,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Name;

@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Step 01 - Home</title>
+        <title>Step 02 - Home</title>
         <meta name="description" content="Index Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
