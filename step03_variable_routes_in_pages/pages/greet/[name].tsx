@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { name } = context.params;
+  const { name } = context.params!;
   return {
     props: {
       name,
@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Name: NextPage<{ props: Props[] }> = ({ name }) => {
+const Name: NextPage<Props> = ({ name }) => {
   return (
     <div className={styles.container}>
       <Head>
