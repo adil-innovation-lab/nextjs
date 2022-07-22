@@ -8,11 +8,11 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    setLoggedIn(true);
+    // setLoggedIn(true);
     if (!loggedIn) {
       router.push("/login");
     }
