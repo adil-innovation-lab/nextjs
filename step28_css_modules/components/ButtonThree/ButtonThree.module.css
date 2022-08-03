@@ -1,0 +1,15 @@
+.localButton {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.composedButton {
+  composes: localButton;
+  background-color: white;
+  color: black;
+  border: white;
+}
+
+.composedButton:hover {
+    background-color: cornflowerblue;
+}
